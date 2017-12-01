@@ -16,7 +16,7 @@ $db_server = "localhost";
 $db_user = "root";
 
 //$db_passwd = "";
-$db_passwd = "IUSKHdn92iuekjfd8932uie";
+//$db_passwd = "IUSKHdn92iuekjfd8932uie";
 
 $db_name = "library";
 

@@ -17,6 +17,7 @@
             $scope.areaVisible = 1;
             $scope.catVisible = 0;
             $scope.arcVisible = 0;
+            $scope.searchVisible = 0;
 
           } else {
               $('body').addClass('loaded');

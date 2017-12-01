@@ -21,9 +21,8 @@ $obj->description = "";
 $obj->area = array();
 $obj->cat = array();
 
-$query = $conn->query("SELECT * FROM areas");
+$query = $conn->query("SELECT * FROM areas WHERE id='".$area."'");
 if($query->num_rows>0){
-    
     $row=$query->fetch_assoc();
 
     $obj->area[0] = new stdclass();
@@ -53,6 +52,8 @@ if($query->num_rows>0){
                 $cArch = 0;
 
                 foreach($ficheros AS $key=>$rutaArchivo) {
+                    
+                    $rutaArchivo = utf8_encode($rutaArchivo );
                     if($key>1){
                         if($rutaArchivo!="@eaDir"){
                             $obj->cat[$c]->rutaArchivos[$cArch] = new stdclass();
