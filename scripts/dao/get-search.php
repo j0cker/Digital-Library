@@ -39,11 +39,13 @@ if($query->num_rows>0){
 
                     foreach($ficheros AS $key=>$rutaArchivo) {
                         
+
+                        $rutaArchivo = utf8_encode($rutaArchivo);
                         $extension = pathinfo($rutaArchivo, PATHINFO_EXTENSION);
                         $rutaArchivo2 = basename($rutaArchivo, '.'.$extension);  
                             
 
-                        if($key>1 && strpos($rutaArchivo2,$search)!==false){
+                        if($key>1 && strpos(strtolower($rutaArchivo2),strtolower($search))!==false){
 
                             $obj->cat[$c] = new stdclass();
                             
