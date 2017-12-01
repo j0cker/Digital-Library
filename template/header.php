@@ -7,7 +7,11 @@
     </div>
 
     <div class="logo hidden-sm-down">
-        <h1><a href="">Librería Digital</a></h1>
+        <h1>
+            <a href="index.php">
+                <img style="width: 130px;" src="img/logo-02-02.png" />
+            </a>
+        </h1>
     </div>
 
     <form class="search">
@@ -20,6 +24,7 @@
     <ul class="top-nav">
         <li class="hidden-xl-up"><a href="http://byrushan.com/projects/super-admin/app/2.0/" data-sa-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
 
+        <!--
         <li class="dropdown">
             <a href="http://byrushan.com/projects/super-admin/app/2.0/" data-toggle="dropdown" class="top-nav__notify"><i class="zmdi zmdi-email"></i></a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
@@ -282,17 +287,17 @@
                     </a>
                 </div>
             </div>
-        </li>
+        </li>-->
 
         <li class="dropdown hidden-xs-down">
             <a href="http://byrushan.com/projects/super-admin/app/2.0/" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
 
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item theme-switch">
-                    Theme Switch
+                    Cambio de Tema
 
                     <div class="btn-group btn-group--colors mt-2 d-block" data-toggle="buttons">
-                        <label class="btn active border-0" style="background-color: #772036"><input type="radio" value="1" autocomplete="off" checked=""></label>
+                        <label class="btn border-0" style="background-color: #772036"><input type="radio" value="1" autocomplete="off" checked=""></label>
                         <label class="btn border-0" style="background-color: #273C5B"><input type="radio" value="2" autocomplete="off"></label>
                         <label class="btn border-0" style="background-color: #174042"><input type="radio" value="3" autocomplete="off"></label>
                         <label class="btn border-0" style="background-color: #383844"><input type="radio" value="4" autocomplete="off"></label>
@@ -301,14 +306,13 @@
                         <br>
 
                         <label class="btn border-0" style="background-color: #5e3d22"><input type="radio" value="6" autocomplete="off"></label>
-                        <label class="btn border-0" style="background-color: #234d6d"><input type="radio" value="7" autocomplete="off"></label>
+                        <label class="btn active border-0" style="background-color: #234d6d"><input type="radio" value="7" autocomplete="off"></label>
                         <label class="btn border-0" style="background-color: #3b5e5e"><input type="radio" value="8" autocomplete="off"></label>
                         <label class="btn border-0" style="background-color: #0a4c3e"><input type="radio" value="9" autocomplete="off"></label>
                         <label class="btn border-0" style="background-color: #7b3d54"><input type="radio" value="10" autocomplete="off"></label>
                     </div>
                 </div>
-                <a href="http://byrushan.com/projects/super-admin/app/2.0/" class="dropdown-item" data-sa-action="fullscreen">Fullscreen</a>
-                <a href="http://byrushan.com/projects/super-admin/app/2.0/" class="dropdown-item">Clear Local Storage</a>
+                <a class="dropdown-item" data-sa-action="fullscreen">Ver Pantalla Completa</a>
             </div>
         </li>
     </ul>

@@ -27,6 +27,16 @@
         var url = 'scripts/dao/get-cat.php';
 		  	return $http.get(url, {cache: false, params: { area:area  } })
 
+      },
+      search: function(search) {
+
+        console.log("[factory][search]");
+
+        console.log(search);
+
+        var url = 'scripts/dao/get-search.php';
+		  	return $http.get(url, {cache: false, params: { search:search  } })
+
       }
     };
   });

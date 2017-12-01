@@ -8,10 +8,10 @@ include ''.dirname(__FILE__).'/../utils/log.php';
 
 mysqli_set_charset($conn,"utf8");
 
-$area = base_de_datos_scape($conn,$_GET["area"]);
+$search = base_de_datos_scape($conn,$_GET["search"]);
 
 $log = new LoggerPhp();
-$log->write_log("[get-areas]","Debug");
+$log->write_log("[get-search]","Debug");
 
 $obj = new stdclass();
 $obj->success = "true";

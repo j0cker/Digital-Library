@@ -6,11 +6,14 @@
         <div class="scrollbar-inner" style="margin-bottom: 0px; margin-right: 0px;">
 
         <div class="user">
-            <div class="user__info" data-toggle="dropdown">
+
+            <!--data-toggle="dropdown"-->
+            <div ng-click="bienvenido()" class="user__info">
                 <div>
                     <div style="text-align: center;" class="user__name">Bienvenid@</div>
                 </div>
             </div>
+        
 
             <!--
             <div class="dropdown-menu">
