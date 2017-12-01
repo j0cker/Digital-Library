@@ -2,7 +2,8 @@
 ?>
 
 <aside class="sidebar">
-    <div class="scroll-wrapper scrollbar-inner" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 486px;">
+    <div class="scrollbar-inner" style="position: relative;">
+        <div class="scrollbar-inner" style="margin-bottom: 0px; margin-right: 0px;">
 
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
@@ -38,5 +39,6 @@
 
         </ul>
 
-    </div><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 88px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 397px; top: 0px;"></div></div></div></div>
+    </div>
+</div>
 </aside>

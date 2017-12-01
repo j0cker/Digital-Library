@@ -1,8 +1,12 @@
 <?PHP
 
+header("Content-Type: text/html;charset=utf-8");
+
 include ''.dirname(__FILE__).'/../utils/conexion.php';
 include ''.dirname(__FILE__).'/../utils/functions.php';
 include ''.dirname(__FILE__).'/../utils/log.php';
+
+mysqli_set_charset($conn,"utf8");
 
 $area = base_de_datos_scape($conn,$_GET["area"]);
 
@@ -41,8 +45,8 @@ if($query->num_rows>0){
 
                 $obj->cat[$c] = new stdclass();
 
-                $obj->cat[$c]->nombre = ucfirst(utf8_encode($row["nombre"]));
-                $obj->cat[$c]->sigla = ucfirst(utf8_encode($row["siglas"]));
+                $obj->cat[$c]->nombre = ucfirst($row["nombre"]);
+                $obj->cat[$c]->sigla = ucfirst($row["siglas"]);
 
                 $obj->cat[$c]->rutaArchivos = array();
 
