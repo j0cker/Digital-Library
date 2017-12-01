@@ -18,7 +18,7 @@
                 console.log("[index.php][search]");
                 
                 $(document).keypress(function(e) {
-                    if(e.which == 13) {
+                    if(e.which == 13 && $(".search__text").val().length>0) {
                         console.log("[index.php][search][keypress]");
                         angular.element('body').scope().search();
 
@@ -77,9 +77,9 @@
 
             <section ng-if="catVisible==1" class="content">
                 <header ng-if="cat.length=='0'" class="content__title">
-                <div class="alert alert-danger">
-                    <strong>Oops!</strong> Actualmente el área "{{catArea.area[0].nombre}}" no cuenta con contenido
-                </div>
+                    <div class="alert alert-danger">
+                        <strong>Oops!</strong> Actualmente el área "{{catArea.area[0].nombre}}" no cuenta con contenido
+                    </div>
                 </header>
 
                 <header ng-if="cat.length!='0'" class="content__title">
@@ -114,6 +114,34 @@
                         <div class="quick-stats__item">
                             <div class="quick-stats__info">
                                 <h2>{{ x.name }}</h2>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section ng-if="searchVisible==1" class="content">
+
+                <header ng-if="searchCon.cat.length=='0'" class="content__title">
+                    <div class="alert alert-danger">
+                        <strong>Oops!</strong> No hemos encontrado resultados de su búsqueda "{{searchW}}"
+                    </div>
+                </header>
+
+                <header ng-if="searchCon.cat.length!='0'" class="content__title">
+                    <h1>Hemos encontrado los siguientes resultados de su búsqueda "{{searchW}}":</h1>
+                </header>
+
+                <div class="row quick-stats">
+
+                    
+                    <div ng-click="archiveSearch()" id="{{ key }}" style="cursor: pointer;" ng-repeat="(key,x) in searchCon.cat" class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="quick-stats__item">
+                            <div class="quick-stats__info">
+                                <h2>{{ x.nameArchivo }}</h2>
                             </div>
 
                         </div>

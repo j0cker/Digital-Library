@@ -17,60 +17,59 @@ $obj = new stdclass();
 $obj->success = "true";
 $obj->description = "";
 
-
-$obj->area = array();
 $obj->cat = array();
 
-$query = $conn->query("SELECT * FROM areas");
+$query = $conn->query("SELECT * FROM areas ORDER BY id ASC");
 if($query->num_rows>0){
+
+    $c=0;
+    $cArch = 0;
     
-    $row=$query->fetch_assoc();
+    while($row2=$query->fetch_assoc()){
 
-    $obj->area[0] = new stdclass();
+        $query2 = $conn->query("SELECT * FROM categorias ORDER BY id ASC");
+        if($query2->num_rows>0){
+            
 
-    $obj->area[0]->id = $area;
-    $obj->area[0]->nombre = $row["name"];
+            while($row=$query2->fetch_assoc()){
 
+                $ficheros = scandir("".dirname(__FILE__)."/../../contenidos/".$row2["id"]."/".$row["siglas"]."");
+                //print_r($ficheros);
+                if(count($ficheros)>2){
 
-    $query = $conn->query("SELECT * FROM categorias");
-    if($query->num_rows>0){
-        
-        $c=0;
+                    foreach($ficheros AS $key=>$rutaArchivo) {
+                        
+                        $extension = pathinfo($rutaArchivo, PATHINFO_EXTENSION);
+                        $rutaArchivo2 = basename($rutaArchivo, '.'.$extension);  
+                            
 
-        while($row=$query->fetch_assoc()){
+                        if($key>1 && strpos($rutaArchivo2,$search)!==false){
 
-            $ficheros = scandir("".dirname(__FILE__)."/../../contenidos/".$area."/".$row["siglas"]."");
-            //print_r($ficheros);
-            if(count($ficheros)>2){
-
-                $obj->cat[$c] = new stdclass();
-
-                $obj->cat[$c]->nombre = ucfirst($row["nombre"]);
-                $obj->cat[$c]->sigla = $row["siglas"];
-
-                $obj->cat[$c]->rutaArchivos = array();
-
-                $cArch = 0;
-
-                foreach($ficheros AS $key=>$rutaArchivo) {
-                    if($key>1){
-                        $obj->cat[$c]->rutaArchivos[$cArch] = new stdclass();
-                        $obj->cat[$c]->rutaArchivos[$cArch]->name = $rutaArchivo;
-                        $obj->cat[$c]->rutaArchivos[$cArch]->url = "contenidos/".$area."/".$row["siglas"]."/".$rutaArchivo."";
-                        $cArch++;
+                            $obj->cat[$c] = new stdclass();
+                            
+                                    
+                            $obj->cat[$c]->nombreCat = ucfirst($row["nombre"]);
+                            $obj->cat[$c]->siglaCat = $row["siglas"];
+                            $obj->cat[$c]->idArea = $row2["id"];
+                            $obj->cat[$c]->nombreArea = $row2["name"];
+                            $obj->cat[$c]->nameArchivo = $rutaArchivo2;
+                            $obj->cat[$c]->urlArchivo = "contenidos/".$row2["id"]."/".$row["siglas"]."/".$rutaArchivo."";
+                            $cArch++;
+                        }
+                        
                     }
-                    
+
                 }
+
+                $c++;
 
             }
 
-            $c++;
-
+        } else {
+            $obj->success = "false";
+            $obj->description = "Error. Please Contact your administrator";
         }
 
-    } else {
-        $obj->success = "false";
-        $obj->description = "Error. Please Contact your administrator";
     }
 
 } else {

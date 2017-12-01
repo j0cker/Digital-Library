@@ -114,6 +114,33 @@
   
         };
 
+
+        $scope.archiveSearch = function(){
+          
+            console.log("[Controllers][archiveSearch]");
+    
+            functions.loading();
+    
+            var llave = $(this)[0].key;
+    
+            console.log("llave archivo: " + llave);
+    
+            $scope.areaVisible = 0;
+            $scope.catVisible = 0;
+            $scope.arcVisible = 0;
+            $scope.searchVisible = 1;
+  
+            console.log($scope.searchCon.cat);
+
+            ruta = $scope.searchCon.cat[llave].urlArchivo;
+  
+            console.log("Ruta: " + ruta);
+  
+            window.location = ""+ruta+"";
+    
+    
+          };
+
         $scope.bienvenido = function(){
 
           console.log("[controllers][bienvenido]");
@@ -128,6 +155,9 @@
           var search = $(".search__text").val();
 
           functions.loading();
+
+          
+          $scope.searchW = search;
           
           functions.search(search).then(function (response) {
             
@@ -136,13 +166,12 @@
     
                 console.log(response.data.cat);
     
-                $scope.catArea = response.data;
-                $scope.cat = response.data.cat;
+                $scope.searchCon = response.data;
                 
                 $scope.areaVisible = 0;
                 $scope.catVisible = 0;
                 $scope.arcVisible = 0;
-                $scope.searchVisible = 0;
+                $scope.searchVisible = 1;
     
               } else {
                   toastr["error"]("Inténtelo de nuevo más tarde", "");

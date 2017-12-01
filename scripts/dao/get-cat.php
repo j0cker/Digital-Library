@@ -54,10 +54,14 @@ if($query->num_rows>0){
 
                 foreach($ficheros AS $key=>$rutaArchivo) {
                     if($key>1){
-                        $obj->cat[$c]->rutaArchivos[$cArch] = new stdclass();
-                        $obj->cat[$c]->rutaArchivos[$cArch]->name = $rutaArchivo;
-                        $obj->cat[$c]->rutaArchivos[$cArch]->url = "contenidos/".$area."/".$row["siglas"]."/".$rutaArchivo."";
-                        $cArch++;
+                        if($rutaArchivo!="@eaDir"){
+                            $obj->cat[$c]->rutaArchivos[$cArch] = new stdclass();
+                            $extension = pathinfo($rutaArchivo, PATHINFO_EXTENSION);
+                            $rutaArchivo2 = basename($rutaArchivo, '.'.$extension);  
+                            $obj->cat[$c]->rutaArchivos[$cArch]->name = $rutaArchivo2;
+                            $obj->cat[$c]->rutaArchivos[$cArch]->url = "contenidos/".$area."/".$row["siglas"]."/".$rutaArchivo."";
+                            $cArch++;
+                        }
                     }
                     
                 }
