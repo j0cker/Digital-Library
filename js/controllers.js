@@ -53,6 +53,7 @@
               $scope.areaVisible = 0;
               $scope.catVisible = 1;
               $scope.arcVisible = 0;
+              $scope.searchVisible = 0;
   
             } else {
                 $('body').addClass('loaded');
@@ -82,6 +83,7 @@
         $scope.areaVisible = 0;
         $scope.catVisible = 0;
         $scope.arcVisible = 1;
+        $scope.searchVisible = 0;
 
         $scope.llaveCat = llave;
         $scope.archives = $scope.cat[llave].rutaArchivos;
@@ -104,6 +106,7 @@
           $scope.areaVisible = 0;
           $scope.catVisible = 0;
           $scope.arcVisible = 1;
+          $scope.searchVisible = 0;
 
           ruta = $scope.cat[$scope.llaveCat].rutaArchivos[llave].url;
 
