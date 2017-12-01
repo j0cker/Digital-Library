@@ -53,7 +53,7 @@ if($query->num_rows>0){
 
                 foreach($ficheros AS $key=>$rutaArchivo) {
                     
-                    $rutaArchivo = utf8_encode($rutaArchivo );
+                    $rutaArchivo = utf8_encode($rutaArchivo);
                     if($key>1){
                         if($rutaArchivo!="@eaDir"){
                             $obj->cat[$c]->rutaArchivos[$cArch] = new stdclass();
