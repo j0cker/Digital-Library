@@ -40,7 +40,8 @@ if($query->num_rows>0){
                     foreach($ficheros AS $key=>$rutaArchivo) {
                         
 
-                        $rutaArchivo = utf8_encode($rutaArchivo);
+                        //$rutaArchivo = utf8_encode($rutaArchivo);
+                        $rutaArchivo = $rutaArchivo;
                         $extension = pathinfo($rutaArchivo, PATHINFO_EXTENSION);
                         $rutaArchivo2 = basename($rutaArchivo, '.'.$extension);  
                             

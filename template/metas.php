@@ -1,7 +1,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
         <title>Librería Digital</title>
 
         <!-- Vendor styles -->
@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/jquery.scrollbar.css">
         <link rel="stylesheet" href="css/fullcalendar.min.css">
+        <link rel="stylesheet" href="css/bootstrap-complement.css">
 
         <!-- App styles -->
         <link rel="stylesheet" href="css/app.min.css">

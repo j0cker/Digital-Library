@@ -1,6 +1,7 @@
 <?PHP
 ?>
 <footer class="footer hidden-xs-down">
+    <img style="width: 70px;" src="img/CUDI.gif" /><img src="img/UDG.png" />
     <p>© Mowisat Corporation. All rights reserved.</p>
 
     <ul class="nav footer__nav">

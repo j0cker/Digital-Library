@@ -13,6 +13,14 @@
             </a>
         </h1>
     </div>
+    
+    <div class="logo hidden-sm hidden-md hidden-lg">
+        <h1>
+            <a href="index.php">
+                <img class="" style="width: 130px;" src="img/logo-02-02.png" />
+            </a>
+        </h1>
+    </div>
 
     <form class="search">
         <div class="search__inner">
